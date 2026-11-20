@@ -1,0 +1,20 @@
+{
+  "name": "findiva",
+  "version": "1.0.0",
+  "description": "Artist discovery tool based on musical taste similarity",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "check": "node --check server.mjs app.js js/api.js js/similarity.js"
+  },
+  "keywords": [
+    "music",
+    "artist-discovery",
+    "music-recommendations",
+    "lastfm"
+  ],
+  "author": "kaelindev",
+  "license": "UNLICENSED"
+}
