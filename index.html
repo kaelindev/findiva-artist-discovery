@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Findiva</title>
+  <title>Findiva — Your next favorite, somewhere in here.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,19 +18,11 @@
       <span>Findiva</span>
     </div>
 
-    <div class="lang-dropdown-wrap">
-      <button class="lang-btn" id="langBtn">
-        <span id="langCurrent">🇬🇧 EN</span>
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-          <path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="lang-menu" id="langMenu">
-        <button class="lang-option active" data-lang="en">🇬🇧 <span>EN</span></button>
-        <button class="lang-option" data-lang="id">🇮🇩 <span>ID</span></button>
-        <button class="lang-option" data-lang="ja">🇯🇵 <span>JP</span></button>
-      </div>
-    </div>
+    <nav class="lang-switch" id="langSwitch" aria-label="Language options">
+      <button class="lang-btn" type="button" data-lang="ja">日本語</button>
+      <button class="lang-btn active" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="id">ID</button>
+    </nav>
   </header>
 
   <main class="main">
@@ -63,7 +56,7 @@
       </div>
 
       <div class="input-actions">
-        <button id="addBtn" class="add-btn">
+        <button id="addBtn" class="add-btn" type="button">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
@@ -72,7 +65,7 @@
         <span class="input-hint" data-i18n="upTo"></span>
       </div>
 
-      <button id="discoverBtn">
+      <button id="discoverBtn" type="button">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
           <path d="M7.5 1a6.5 6.5 0 100 13A6.5 6.5 0 007.5 1zM5.5 5l4 2.5-4 2.5V5z" fill="currentColor"/>
         </svg>
@@ -80,12 +73,12 @@
       </button>
     </section>
 
-    <div id="loading" class="loading hidden">
+    <div id="loading" class="loading hidden" aria-live="polite">
       <div class="loading-dots"><span></span><span></span><span></span></div>
       <p id="loadingText"></p>
     </div>
 
-    <section id="results" class="results hidden">
+    <section id="results" class="results hidden" aria-live="polite">
       <div class="results-header">
         <h2 class="results-title" data-i18n="resultsTitle"></h2>
         <p class="results-sub" id="resultsSub"></p>
@@ -93,11 +86,11 @@
       <div class="cards-grid" id="cardsGrid"></div>
     </section>
 
-    <div id="errorMsg" class="error hidden"></div>
+    <div id="errorMsg" class="error hidden" role="alert"></div>
 
   </main>
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
